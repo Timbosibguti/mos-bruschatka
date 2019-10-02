@@ -1,0 +1,29 @@
+.main-section {
+    --size: 100%;
+}
+
+.section {
+    width: 100%;
+    margin: 0;
+    padding: 50px 0;
+}
+
+.section-sm {
+    width: 100%;
+    margin: 0;
+    padding: 25px 0;
+}
+
+.section-big {
+    width: 100%;
+    margin: 0;
+    padding: 75px 0;
+}
+
+.section--highlight {
+    background-color: $clear-blue;
+}
+
+.section--gradient-blue {
+    background-color: $dark-blue;
+}

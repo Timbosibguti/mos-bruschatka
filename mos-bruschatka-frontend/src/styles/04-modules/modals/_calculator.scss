@@ -1,0 +1,29 @@
+.modal-calculator {
+    max-width: 750px !important;
+    
+    &__actions {
+        max-width: 300px;
+        --margin: x auto;
+    }
+
+    &__img {
+        margin-bottom: 1rem;
+
+        @media #{query($min: false, $max: $md)} {
+            display: none;
+        }
+    }
+
+    &__inputs {
+        padding: .5rem 1rem;
+        border-radius: $card-radius;
+        background-color: $clear-blue;
+    }
+
+    .table {
+        tr td:last-child {
+            text-align: right;
+            min-width: 100px;
+        }
+	}
+}

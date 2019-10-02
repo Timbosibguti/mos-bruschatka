@@ -1,0 +1,16 @@
+.bannermod
+{
+  &__banmain
+  {
+    display: block;
+    margin: 10px;
+  }
+
+  &__img{
+    width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    padding: 2%;
+  }
+
+}

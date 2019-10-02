@@ -1,0 +1,92 @@
+.more-about {
+	&__col-h3 {
+		margin-bottom: 1rem;
+	}
+
+	&__row {
+		@include flexbox(wrap, null, stretch);
+		--margin: x -15px;
+
+		@media #{query($min: false, $max: $md)} {
+			flex-direction: column;
+			align-items: stretch;
+		}
+	}
+
+	&__col {
+		position: relative;
+		overflow: hidden;
+		--padding: x 15px;
+
+		@media #{query($min: $md, $max: false)} {
+			&:first-of-type {
+				width: makeCol(10, 2);
+			}
+	
+			&:last-of-type {
+				width: makeCol(10, 8);
+			}
+		}
+	}
+	
+	&__partners {
+		@media #{query($min: false, $max: $md)} {
+			display: flex;
+			align-items: center;
+			overflow-x: auto;
+			--margin: x 15px;
+			margin-bottom: 2rem;
+		}
+
+		@media #{query($min: $md, $max: false)} {
+			width: 135px;
+		}
+
+		&-img {
+			display: inline-block;
+			--margin: 15px x;
+
+			@media #{query($min: false, $max: $md)} {
+				--padding: x 15px;
+
+				&:not(:nth-child(n+3)) {
+					flex: 0 0 50px;
+				}
+
+				&:nth-child(n+3) {
+					flex: 0 0 150px;
+				}
+
+				img {
+					max-height: 50px;
+				}
+			}
+			
+			
+			@media #{query($min: $md, $max: false)} {
+				&:first-child {
+					float: right;
+				}
+
+				&:not(:nth-child(n+3)) {
+					max-width: 50%;
+				}
+
+				img {
+					width: 100%;
+					height: auto;
+				}
+			}
+		}
+	}
+
+	&__video {
+		height: 100%;
+
+		iframe {
+			width: 100%;
+			height: 45vh;
+			max-height: 390px;
+		}
+	}
+}

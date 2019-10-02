@@ -1,0 +1,348 @@
+.ukladka {
+
+    &-masterhead {
+        background-color: $light-gray;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        --padding: 130px x;
+
+        @media(max-width: $md) {
+            --padding: 50px x;
+        }
+
+        @media(min-width: $md) {
+            --padding: 130px x;
+        }
+
+        &__title {
+            font-weight: $font-weight-normal;
+        }
+
+        .icon--phone {
+            fill: $black;
+            vertical-align: -3px;
+        }
+    }
+
+    &-features {
+        &__svg-border {
+            margin-bottom: 15px;
+        }
+
+        &__title {
+            font-size: 20px;
+            line-height: 24px;
+            margin-bottom: 15px;
+    
+            @media(min-width: $md) {
+                min-height: 48px;
+            }
+        }
+    }
+
+    &-schema {
+
+        .size6of7 {
+            @media(max-width: $lg) {
+                width: 100%;
+            }
+        }
+
+        &__list {
+            display: flex;
+            flex-wrap: wrap;
+            --margin: x -15px x -15px;
+            counter-reset: schemaStep;
+
+            &-item {
+                position: relative;
+                counter-increment: schemaStep;
+                display: inline-block;
+                --padding: x 15px;
+                color: $dark;
+                font-weight: $font-weight-bold;
+
+                @media(max-width: $md) {
+                    width: makeCol(2, 1);
+                    margin-bottom: 30px;
+                }
+
+                @media(min-width: $md) {
+                    width: makeCol(3, 1);
+                    &:not(:nth-child(4n)) {
+                        margin-bottom: 30px;
+                    }
+                }
+                
+                &::before {
+                    display: block;
+                    content: counter(schemaStep);
+                    --size: 30px;
+                    text-align: center;
+                    line-height: 30px;
+                    @include border($color: $light-gray);
+                    border-radius: 50%;
+                    margin-bottom: 10px;
+                }
+
+                @media(min-width: $md) {
+                    &:not(:first-child) {
+                        &::after {
+                            display: block;
+                            content: '';
+                            position: absolute;
+                            top: 15px;
+                            left: 15px;
+                            background-color: $light-gray;
+                        }
+                    }
+    
+                    &:nth-child(2),
+                    &:nth-child(3) {
+                        &::after {
+                            --size: 50% 1px;
+                            transform: translateX(-100%);
+                        }
+                    }
+    
+                    &:nth-child(4) {
+                        &::after {
+                            top: 0;
+                            left: 30px;
+                            --size: 1px 30px;
+                            transform: translate(-100%, -100%);
+                        }
+                    }
+    
+                    &:nth-child(5),
+                    &:nth-child(6) {
+                        &::after {
+                            left: 45px;
+                            --size: 50% 1px;
+                        }
+                    }
+    
+                    &:nth-child(4n) {
+                        order: 2;
+                    }
+    
+                    &:nth-child(5n) {
+                        order: 1;
+                    }
+                }
+            }
+        }
+    }
+
+    &-calc {
+        @media(max-width: $md) {
+            display: none;
+        }
+
+        &__steps {
+            border-radius: $card-radius-big;
+            overflow: hidden;
+        }
+
+        &__step {
+            min-height: 500px;
+
+            &-0 {
+                display: flex;
+                flex-flow: column;
+                justify-content: center;
+                align-items: center;
+                background-color: $light-gray;
+
+                &-block-centered {
+                    max-width: 830px;
+                    text-align: center;
+                }
+
+                &-title {
+                    color: $white;
+                    margin-bottom: 90px;
+                }
+
+                &-btn {
+                    max-width: 350px;
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
+
+    &-adv {
+        &__h2 {
+            margin-bottom: 40px;
+    
+            @media(max-width: 992px) {
+                text-align:center;
+                font-size:26px;
+            }
+    
+        }
+
+        &__card {
+            position: relative;
+            padding-left: 115px;
+        
+            @media(max-width: 768px) {
+                margin-bottom: 15px;
+            }
+
+            @media(min-width: 768px) {
+                margin-bottom: 30px;
+            }
+
+            &-title {
+                margin-bottom: 20px;
+            }
+        }
+    
+        &__text {
+            padding-bottom: 15px;
+        }
+        
+        &__icon {
+            position: absolute;
+            top: 0;
+            left: 15px;
+            margin-right: 30px;
+        }
+        
+        &__link {
+            margin-top: 50px;
+        }
+        
+        .inline-info {
+            margin-top: 15px;
+    
+            @media(max-width: 992px) {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+    
+            }
+    
+        }
+    }
+
+    &-consultation {
+        background-color: #6c8897;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: $white;
+
+        &-questions {
+            &__list {
+                margin-bottom: 50px;
+
+                &-item {
+                    margin-bottom: 20px;
+
+                    &::before {
+                        display: inline-block;
+                        content: '';
+                        --size: 14px 7px;
+                        transform: rotate(-45deg) translateX(6px);
+                        margin-right: 30px;
+                        @include border($position: left, $width: 2px, $color: $white);
+                        @include border($position: bottom, $width: 2px, $color: $white);
+                    }
+                }
+            }
+        }
+
+        .icon--phone {
+            fill: $black;
+            vertical-align: -3px;
+        }
+    }
+
+    &-potency {
+        &__list {
+            display: flex;
+            flex-wrap: wrap;
+
+            &-item {
+                display: inline-block;
+                --padding: x 15px;
+
+                @media(max-width: $md) {
+                    flex: 1 1 50%;
+                }
+
+                @media(min-width: $md) and (max-width: $lg) {
+                    flex: 1 1 calc(100% / 3);
+                }
+
+                @media(min-width: $lg) {
+                    flex: 1 1 calc(100% / 5);
+                }
+            }
+        }
+    }
+
+    &-service {
+        &__form {
+            background-color: $white;
+            padding: 35px 30px;
+            
+            .privacy-info {
+                padding-top: 0;
+            }
+        }
+    }
+
+    &-reduction {
+        &__card {
+            box-shadow: 0 2px 10px transparentize($dark, .9);
+            padding: 35px;
+            transition: all .3s ease;
+
+            &:hover {
+                transform: translateY(-15px);
+                background-color: $yellow;
+                
+                * {
+                    color: $white;
+                }
+
+                .btn {
+                    border-color: $white;
+
+                    &:hover {
+                        background-color: $white;
+                    }
+                }
+            }
+
+            &-percent {
+                font-size: 100px;
+                line-height: 100px;
+                font-weight: $font-weight-bold;
+                min-height: 150px;
+                color: $black;
+
+                & > span {
+                    color: $yellow;
+                    font-size: 50px;
+                }
+            }
+        }
+    }
+
+    &-newsletters {
+        .container {
+            @include border($style: dashed);
+            padding: 30px 30px 20px 30px;
+        }
+
+        .privacy-info {
+            height: inherit;
+        }
+    }
+}

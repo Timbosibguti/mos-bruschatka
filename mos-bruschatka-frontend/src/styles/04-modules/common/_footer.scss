@@ -1,0 +1,89 @@
+.footer {
+    background-color: $bg-footer;
+    
+    &__list-title {
+        display: block;
+        text-transform: inherit;
+        font-weight: $font-weight-bold;
+        white-space: nowrap;
+        font-size: 16px;
+        color: $gray;
+        margin-bottom: 15px;
+
+        &.footer__list-header {
+            margin-top: to-rem(20);
+        }
+
+        &[href^="tel"] {
+            margin: 0;
+        }
+    }
+
+    &__lists-item:last-of-type {
+        margin-top: -40px;
+    }
+
+    &__text--small {
+        color: $dark-gray;
+        font-size: 12px;
+    }
+
+    &__list-item {
+        list-style: none;
+        padding: 0;
+    }
+
+    &__link {
+        font-size: 12px;
+        text-transform: uppercase;
+        color: $dark-gray;
+
+        &--yellow {
+            color: $yellow;
+
+            &:hover {
+                color: $dark-yellow;
+            }
+        }
+    }
+
+    &__logo {
+        display: block;
+        padding-right: 10px;
+
+        svg {
+            width: 175px;
+            .cls-1 {
+                fill: $white !important;
+            }
+        }
+    }
+
+    .copyright {
+        display: block;
+        color: $gray;
+        font-size: $font-size-sm;
+        line-height: $line-height-sm;
+        margin-top: 15px;
+    }
+
+    &__info-text {
+        display: block;
+        position: static;
+        bottom: 0;
+        left: 0;
+
+        &__list-title {
+            margin: 0;
+        }
+
+        @media(min-width: 1200px) {
+            position: absolute;
+        }
+    }
+
+    &__link-icon {
+        display: inline-block;
+        margin-right: 10px;
+    }
+}

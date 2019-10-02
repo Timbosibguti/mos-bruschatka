@@ -1,0 +1,26 @@
+.filials-page {
+    &__balloon {
+        position: absolute;
+        top: 25px;
+        z-index: 2;
+        background-color: $white;
+        box-shadow: 0 0 15px transparentize($dark, .8);
+        min-width: 300px;
+        min-height: 490px;
+        padding: 25px;
+        overflow: hidden;
+    }
+}
+
+.filials {
+    @media #{query($min: false, $max: $md)} {
+        display: none;
+    }
+
+    &-map {
+        @include flexbox(null, center, center);
+        background-color: transparentize($color: $dark, $amount: 0.5);
+        max-height: 600px;
+        min-height: 300px;
+    }
+}

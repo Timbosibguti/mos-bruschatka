@@ -1,0 +1,13 @@
+---------- Date: 2019-03-06 13:29:44 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /
+MOD DETAILS:
+   modFile   : D:\Enterprises\Depmakt\mos-bruschatka.ru\dist\vqmod/xml/Components.xml
+   id        : My custom Module
+   version   : 1.0.0
+   vqmver    : 2.5.0
+   author    : yannickngassa@department.marketing
+VQModObject::parseMods - Could not resolve path for [admin/controller/catalog/custom_pages.php] (SKIPPED)
+
+----------------------------------------------------------------------
+
+

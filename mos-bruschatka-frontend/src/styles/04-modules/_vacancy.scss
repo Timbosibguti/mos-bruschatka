@@ -1,0 +1,99 @@
+.vacancy {
+
+    &__title {
+        margin-bottom: 10px;
+    }
+
+    &__price {
+        margin-bottom: 30px;
+    }
+
+    &__options {
+        margin-bottom: 30px;
+    }
+
+    &__list {
+        margin-bottom: 35px;
+
+        &-title {
+            margin-bottom: 10px;
+        }
+
+        &-item {
+            &:before {
+                display: inline-block;
+                content: '-';
+                margin-right: 5px;
+            }
+        }
+    }
+
+    &-form {
+
+        counter-reset: vacancyStep;
+
+        &__note {
+            margin-bottom: 25px;
+            color: $light-gray;
+            font-size: $font-size-sm;
+            line-height: 16px;
+        }
+
+        &__stepper {
+            margin-bottom: 15px;
+
+            &:before {
+                display: inline-block;
+                counter-increment: vacancyStep;
+                content: counter(vacancyStep);
+                @include border();
+                border-radius: 50%;
+                text-align: center;
+                line-height: 20px;
+                margin-right: 5px;
+                --size: 20px;
+            }
+        }
+
+        &__textarea {
+            background-color: $white;
+            border-radius: $card-radius;
+            height: 90px;
+            width: 100%;
+            margin-bottom: 10px;
+            border: 0;
+            outline: 0;
+            padding: 15px;
+            font-size: $font-size-sm;
+            line-height: 16px;
+
+            &::placeholder {
+                font-weight: $font-weight-bold;
+                text-transform: uppercase;
+            }
+        }
+    }
+
+    &-addr {
+        &__title {
+            margin-bottom: 5px;
+        }
+
+        &__map {
+            height: 218px;
+            width: calc(100% + 40px);
+            display: block;
+            overflow: hidden;
+            position: relative;
+            --margin: 20px -20px -20px -20px;
+        }
+    }
+
+    &-contact {
+        &__text-top {
+            color: $light-gray;
+            margin-top: 25px;
+        }
+    }
+
+}

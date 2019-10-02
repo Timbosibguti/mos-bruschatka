@@ -1,0 +1,107 @@
+.table>tbody>tr>td {
+    vertical-align: middle;
+}
+
+.table tr:first-child td {
+    border-top: none;
+}
+
+.pagination {
+    display: block;
+    padding-left: 0;
+    margin: 0;
+    border-radius: 0px;
+}
+
+
+.messageSubject {
+    margin-bottom: 20px;
+}
+
+.list tbody td a {
+    text-decoration: none;
+}
+
+.tab-navigation {
+    position: relative;
+}
+
+.tab-navigation .nav {
+    margin-bottom: 20px;
+}
+
+.tab-buttons {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.center {
+    text-align: center;
+}
+
+.table-head {
+    background: #EFEFEF;
+}
+
+/*** Pagination */
+
+.pagination li { font-weight: bold; }
+.pagination li a {
+    display: block;
+    float: left;
+    color: #585858;
+    text-decoration: none;
+    padding: 6px 11px;
+    margin-right: 6px;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    background-color: #eee;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#f7f7f7), to(#eee));
+    background-image: -webkit-linear-gradient(top, #f7f7f7, #eee);
+    background-image: -moz-linear-gradient(top, #f7f7f7, #eee);
+    background-image: -ms-linear-gradient(top, #f7f7f7, #eee);
+    background-image: -o-linear-gradient(top, #f7f7f7, #eee);
+    background-image: linear-gradient(top, #f7f7f7, #eee);
+    -webkit-box-shadow: 2px 2px 4px -1px rgba(0,0,0, .55);
+    -moz-box-shadow: 2px 2px 4px -1px rgba(0,0,0, .55);
+    box-shadow: 2px 2px 4px -1px rgba(0,0,0, .55);
+}
+.pagination li a:hover {
+    color: #3280dc;
+}
+.pagination li a:active {
+    position: relative;
+    top: 1px;
+    -webkit-box-shadow: 1px 1px 3px -1px rgba(0,0,0, .55);
+    -moz-box-shadow: 1px 1px 3px -1px rgba(0,0,0, .55);
+    box-shadow: 1px 1px 3px -1px rgba(0,0,0, .55);
+}
+.pagination > .active > span{
+    z-index: 0;
+    color:inherit;
+    background-color:#fff;
+    border: none;
+}
+
+.pagination > .active > span:hover{
+    z-index: 0;
+    color:inherit;
+    background-color:#fff !important;
+}
+
+
+ 
+.tabbable .nav-tabs li a:hover{
+    color:#515151;
+}
+ 
+.tabbable .nav-tabs li.active a,
+.tabbable .nav-tabs li.active a:focus,
+.tabbable .nav-tabs li.active a:hover{
+    color:#fff;
+    background: #515151;
+    border-bottom:1px solid #fff;
+}
+
+

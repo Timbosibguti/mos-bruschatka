@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification>
+	<id><![CDATA[Auto Unique Model]]></id>
+	<version><![CDATA[2.0.0]]></version>
+	<vqmver><![CDATA[2.5.0]]></vqmver>
+	<author><![CDATA[Rahul-rahuljain1991@live.com]]></author> 
+	
+	<!-- Tootevälja muudatus -->       
+	<file name="admin/controller/catalog/product.php"> 
+		<operation error="skip">
+             <search position="replace"><![CDATA[$data['model'] = '';]]></search>
+             <add><![CDATA[$data['model'] = 'M'.rand(1000,9999).'X'.date('dmyHis',time());]]></add>
+		</operation>
+		
+		<operation error="skip">
+             <search position="replace"><![CDATA[$data['model'] = $product_info['model'];]]></search>
+             <add><![CDATA[ 
+				if(!preg_match('/^M[\d]{4}X[\d]{12}$/',$product_info['model'])){
+					$data['model'] = 'M'.rand(1000,9999).'X'.date('dmyHis',time());
+					} else {
+					$data['model'] = $product_info['model'];
+					}
+					]]></add>
+		</operation>
+		<?php } ?>
+	</file>		
+	
+	
+</modification>

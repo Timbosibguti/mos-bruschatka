@@ -1,0 +1,23 @@
+.contact {
+    &-map {
+        position: relative;
+        background-color: $clear-blue;
+        
+        &__balloon {
+            position: absolute;
+            max-width: 400px;
+            top: 25px;
+            left: 25px;
+            z-index: 2;
+            background-color: $white;
+            box-shadow: 0 0 15px transparentize($dark, .8);
+            min-width: 300px;
+            padding: 25px;
+            overflow: hidden;
+        }
+    }
+}
+
+.contact-map__balloon .fas{
+    margin-right: 4%;
+}

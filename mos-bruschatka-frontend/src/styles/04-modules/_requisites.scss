@@ -1,0 +1,37 @@
+.requisites {
+
+    &__title-first {
+        margin: 0 0 20px 0;
+    }
+
+    &__title-second {
+        margin: 0 0 30px 0;
+    }
+
+    &__text-small {
+        color: $light-gray;
+        padding: 0; margin: 0 0 5px 0;
+    }
+
+    &__text-normal {
+        padding: 0;
+
+        &:not(:last-of-type) {
+            margin: 0 0 20px 0;
+        }
+    }
+
+    &__form {
+        background-color: $clear-blue;
+        padding: 25px 20px 30px 20px;
+        border-radius: $card-radius;
+    }
+
+    &__form-title {
+        margin: 0 0 20px 0;
+    }
+
+    .inline-info {
+        margin: 40px 0 0 0;
+    }
+}

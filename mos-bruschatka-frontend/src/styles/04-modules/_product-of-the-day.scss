@@ -1,0 +1,149 @@
+.product-of-the-day {
+  border: 3px solid #f8b317;
+  border-radius: 8px;
+  position: relative;
+  padding: 34px 14px 0;
+  display: flex;
+  font-family: Roboto, serif;
+  color: black;
+  margin: 1em 0;
+
+  @media only screen and (max-width: 556px) {
+    margin-top: 30px!important;
+    margin-bottom: 15px!important;
+  }
+
+  h2, h3 {
+    font-size: 24px;
+    color: #2e3337;
+    font-weight: bold;
+  }
+
+  .heading{
+    position: absolute;
+    background-color: #fff;
+    top: -24px;
+    text-transform: uppercase;
+    padding: 0 5px;
+  }
+
+  &__image {
+    position: relative;
+    max-width: 240px;
+    min-width: 200px;
+    height: 185px;
+    background-color: white;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+    box-shadow: #fefaef 0 0 12px 7px;
+    border: 1px solid #f8f8f8;
+    cursor: pointer;
+
+    .discount-label {
+      width: 52px;
+      height: 25px;
+      background-color: #f8b318;
+      text-align: center;
+      line-height: 1.9;
+      font-size: 14px;
+      font-weight: bold;
+      border: 1px solid #fdf5e0;
+      border-right-color: #fbd783;
+      border-bottom-color: #fac754;
+      border-left-color: #fce09f;
+      border-radius: 1px;
+      top: 16px;
+      position: absolute;
+      right: 0;
+    }
+  }
+
+  &__product-description {
+    line-height: 1.5;
+    padding-top: 0.5em;
+  }
+
+  &__product-price {
+    font-weight: bold;
+
+    & .price-old {
+      color: #dcdcdc;
+      text-decoration: line-through;
+      margin-top: 2em;
+      margin-bottom: 1em;
+    }
+
+    & .price {
+      color: #fbb11a;
+      font-size: 1.8em;
+    }
+  }
+
+  & .col-sm {
+    position: relative;
+    margin-bottom: 34px;
+  }
+
+  & .info {
+    min-width: 200px;
+  }
+
+  & .controls {
+    min-width: 200px;
+    min-height: 120px;
+
+    & > div {
+      text-align: right;
+      & > * {
+        display: inline-block;
+      }
+    }
+
+    &__start {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
+    &__end {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+  }
+
+  &__timer {
+    border: 1px solid #f8b318;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    display: inline-block;
+    padding: 2px 10px 0 10px;
+    line-height: 1.5;
+  }
+
+  &__more-about {
+    background: #f8b317;
+    border-radius: 21px;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 18px 26px 15px;
+
+    &:hover {
+      color: black;
+    }
+
+    &:after {
+      content: '';
+      display: inline-block;
+      margin-left: 1em;
+      @include sprite($right-arrow)
+    }
+  }
+
+  &__counter{
+    margin-top: 8px;
+  }
+}

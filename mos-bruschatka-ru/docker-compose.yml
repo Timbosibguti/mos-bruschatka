@@ -1,0 +1,49 @@
+version: '3.3'
+
+services:
+  dm-bruschatka-ocstore:
+    container_name: dm-bruschatka-ocstore
+    build: .
+    restart: always
+    environment:
+      - VIRTUAL_HOST=mos-bruschatka.docker,opt.mos-bruschatka.docker,krasnodar-bruschatka.docker,opt.krasnodar-bruschatka.docker,rostovdon-bruschatka.docker,opt.rostovdon-bruschatka.docker
+      - VIRTUAL_PORT=443
+      - VIRTUAL_PROTO=https
+    volumes:
+      - ./www:/var/www/public
+      - ./assets:/var/www/assets
+      - ./config/development/config.php:/var/www/public/config.php
+      - ./config/development/admin/config.php:/var/www/public/admin/config.php
+      - ./server/apache.conf:/etc/apache2/sites-available/000-default.conf
+    expose:
+      - 443
+      - 80
+    networks:
+      - dm-internal
+
+  dm-bruschatka-assets:
+    container_name: dm-bruschatka-assets
+    image: bitnami/nginx:latest
+    environment:
+      - VIRTUAL_HOST=assets.mos-bruschatka.docker
+      - VIRTUAL_PORT=8080
+      - VIRTUAL_PROTO=http
+    volumes:
+      - ./assets:/app
+    networks:
+      - dm-internal
+
+  dm-bruschatka-mysql-init:
+    container_name: dm-bruschatka-mysql-init
+    image: monasca/mysql-init:1.5.4
+    environment:
+      - MYSQL_INIT_PASSWORD=qwerty
+    volumes:
+      - ./server/sql:/mysql-init.d
+    networks:
+      - dm-internal
+
+
+networks:
+  dm-internal:
+    external: true

@@ -1,0 +1,122 @@
+.vacancies {
+    &-filter {
+        display: flex;
+        flex-wrap: wrap;
+        --margin: x -15px 20px -15px;
+        
+        &__item {
+            --padding: x 15px;
+
+            @media(max-width: $sm) {
+                flex: 1 1 100%;
+                margin-bottom: 15px;
+            }
+
+            @media(min-width: $sm) and (max-width: $md) {
+                flex: 1 1 50%;
+            }
+
+            @media(min-width: $md) and (max-width: $xl) {
+                flex: 0 1 makeCol(9, 4);
+            }
+
+            @media(min-width: 1200px) {
+                flex: 0 1 makeCol(9, 3);
+            }
+        }
+    }
+
+    &-list {
+        &__item {
+            display: flex;
+            flex-wrap: wrap;
+            @include border($width: 2px, $color: $clear-blue);
+            padding: 20px;
+            border-radius: $card-radius;
+
+            @media(max-width: 767px) {
+                flex-direction: column;
+            }
+
+            &-name {
+                display: block;
+                font-weight: $font-weight-bold;
+                margin-bottom: 10px;
+
+                @media(min-width: 767px) {
+                    flex: 1 1 auto;
+                }
+            }
+
+            &-speciality {
+                display: block;
+                font-size: $font-size-sm;
+                line-height: $line-height-sm;
+                color: $light-gray;
+                margin-bottom: 10px;
+                flex: 1 1 100%;
+
+                @media(min-width: 767px) {
+                    order: 0;
+                }
+            }
+
+            &-location {
+                margin-bottom: 10px;
+
+                @media(min-width: 767px) {
+                    display: inline;
+                }
+
+                svg {
+                    vertical-align: -2px;
+                }
+            }
+
+            &-salary {
+                font-weight: $font-weight-bold;
+                margin-bottom: 10px;
+
+                @media(min-width: 767px) {
+                    order: 3;
+                }
+            }
+
+            &-description {
+                margin-top: 5px;
+                margin-bottom: 15px;
+                flex: 1 1 100%;
+            }
+
+            &-actions {
+                @media(min-width: 767px) {
+                    flex: 1 1 auto;
+                }
+            }
+
+            &-favorite,
+            &-share {
+                color: $blue;
+                --margin: x 20px 10px x;
+
+                svg {
+                    fill: $blue;
+                    margin-right: 5px;
+                    vertical-align: -2px;
+                }
+
+                &:hover {
+                    color: $yellow;
+
+                    svg {
+                        fill: $yellow;
+                    }
+                }
+            }
+
+            &:not(:last-child) {
+                margin-bottom: 20px;
+            }
+        }
+    }
+}

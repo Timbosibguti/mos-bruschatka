@@ -1,0 +1,19 @@
+{
+  "pricelist": {
+    "mos-bruschatka.ru": "pricelists/moscow/pricelist.pdf",
+    "opt.mos-bruschatka.ru": "pricelists/moscow/pricelist.pdf",
+    "krasnodar-bruschatka.ru": "pricelists/krasnodar/pricelist.xlsx",
+    "opt.krasnodar-bruschatka.ru" :"pricelists/krasnodar/pricelist.xlsx",
+    "rostovdon-bruschatka.ru": "pricelists/rostovdon/pricelist.xlsx",
+    "opt.rostovdon-bruschatka.ru" :"pricelists/rostovdon/pricelist.xlsx"
+  },
+
+  "requisite": {
+    "mos-bruschatka.ru": "requisites/moscow/requisites.pdf",
+    "opt.mos-bruschatka.ru": "requisites/moscow/requisites.pdf",
+    "krasnodar-bruschatka.ru": "requisites/regions/requisites.pdf",
+    "opt.krasnodar-bruschatka.ru" :"requisites/regions/requisites.pdf",
+    "rostovdon-bruschatka.ru": "requisites/regions/requisites.pdf",
+    "opt.rostovdon-bruschatka.ru" :"requisites/regions/requisites.pdf"
+  }
+}

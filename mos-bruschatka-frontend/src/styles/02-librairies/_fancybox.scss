@@ -1,0 +1,49 @@
+.fancybox-content {
+	overflow: visible;
+	background-color: $white;
+	max-width: 1000px;
+
+	@media #{query($min: false, $max: $md)} {
+		margin: 15px;
+		width: calc(100% - 30px);
+		padding: 25px;
+		border-radius: $card-radius;
+	}
+
+	@media #{query($min: $md, $max: false)} {
+		width: calc(100% - 75px);
+		margin: 30px;
+		padding: 50px;
+		border-radius: $card-radius-big;
+	}
+}
+
+/* Buttons */
+
+.fancybox-button {
+	&.fancybox-close-small {
+		background-color: $dark;
+		border-radius: 50%;
+		--size: #{to-rem(30)};
+		color: $white;
+		padding: 5px;
+		opacity: 1;
+	
+		&:hover {
+			background-color: $yellow;
+		}
+
+		@media #{query($min: false, $max: $md)} {
+			top: 0; right: 0;
+		}
+	
+		@media #{query($min: $md, $max: false)} {
+			top: -15px; right: -15px;
+		}
+	}
+}
+
+
+.fancybox-is-open .fancybox-bg {
+	opacity: .75;
+}

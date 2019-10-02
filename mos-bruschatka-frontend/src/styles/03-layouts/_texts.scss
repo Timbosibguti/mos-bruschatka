@@ -1,0 +1,53 @@
+.text-normal {
+    font-size: 16px;
+    line-height: 18px;
+}
+
+.text-sm {
+    font-size: 12px;
+    line-height: 14px;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.text--bold {
+    font-weight: $font-weight-bold;
+}
+
+.text--medium-bold {
+    font-weight: $font-weight-medium;
+}
+
+.text--blue {
+    color: $blue;
+}
+
+.text--white {
+    color: $white;
+}
+
+.text--black {
+    color: $black;
+}
+
+.text--yellow {
+    color: $yellow;
+}
+
+.text--light-gray {
+    color: $light-gray;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}

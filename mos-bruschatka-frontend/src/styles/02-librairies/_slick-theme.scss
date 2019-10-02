@@ -1,0 +1,72 @@
+.icon-slick {
+    position: absolute;
+    z-index: 6;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all .3s ease;
+    @include flexbox(null, center, center);
+    @include border();
+    &--prev {
+        left: -50px;
+        &:before {
+            content: '\276E';
+            transform: translate(-2px, -1px);
+        }
+    }
+    &--next {
+        right: -50px;
+        &:before {
+            content: '\276F';
+            transform: translate(2px, -1px)
+        }
+    }
+    &--simple {
+        --size: 40px;
+        background-color: transparent;
+        border-radius: 50%;
+        color: $black;
+        font-size: 25px;
+        opacity: .25;
+        &:hover {
+            border-color: $yellow;
+            color: $yellow;
+            opacity: 1;
+        }
+    }
+    &--recomend {
+        background-color: transparent;
+        font-size: 75px;
+        color: darken($clear-blue, 5%);
+        &:hover {
+            color: $blue;
+        }
+    }
+}
+
+.slick-counter {
+    position: absolute;
+    z-index: 5;
+    bottom: 30px;
+    right: 45px;
+    display: inline-block;
+    text-align: center;
+    background-color: rgba(186, 190, 199, .5);
+    color: $white;
+    font-weight: $font-weight-bold;
+    border-radius: $card-radius-big;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 13px;
+    &__separator {
+        opacity: .5;
+        margin: 0 7px;
+    }
+}
+
+.slick-slides-number {
+    opacity: .5;
+}
+
+.partners__slideshow-imgs .slick-slide{
+    line-height: 18em;
+}

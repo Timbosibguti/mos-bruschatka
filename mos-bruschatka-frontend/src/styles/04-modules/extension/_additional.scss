@@ -1,0 +1,62 @@
+.additional {
+    &s {
+        margin-bottom: 50px;
+    }
+
+    &s__h3 {
+        margin-bottom: 20px;
+    }
+
+    &s__row {
+        @include flexbox(null, space-between, stretch);
+    }
+
+    &__title {
+        margin-bottom: 13px;
+    }
+
+    &__label {
+        display: inline-block;
+        width: calc(25% - 10px);
+        max-width: 170px;
+        text-align: center;
+        border-radius: $card-radius;
+    }
+
+    &__status {
+        @include border($width: 1px 1px 2px 1px, $color: $gray);
+        @include button($size: 100% 40px, $lh: 36px, $fs: $font-size-sm);
+        display: block;
+        --margin: 13px x;
+    
+        &:after {
+            position: static;
+            content: 'Добавить';
+            line-height: 20px;
+            vertical-align: middle;
+        }
+    }
+
+    &__price {
+        font-size: $font-size-sm;
+    }
+
+    input[type="checkbox"]:checked + &__label {
+
+        .additional__status {
+            border-color: $yellow;
+            color: $yellow;
+
+            &:before {
+                display: inline-block;
+                content: '\2714';
+                margin-right: 5px;
+                vertical-align: -1px;
+            }
+    
+            &:after {
+                content: 'Добавлено';
+            }
+        }
+    }
+}

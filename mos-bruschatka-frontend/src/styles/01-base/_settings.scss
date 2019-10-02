@@ -1,0 +1,43 @@
+// COLORS
+$white: #ffffff;
+$blue: #3da0ee;
+$dark-blue: #3da0ee;
+$clear-blue: #f1f5fb;
+$light-blue: #69b6f3;
+$yellow: #ffaf00;
+$dark-yellow: #ff770d;
+$green: #2ea313;
+$dark-green: #1c8a27;
+$dark: #000000;
+$red: #ff0000;
+$black: #333333;
+$gray: #737880;
+$light-gray: #a6abb3;
+$dark-gray: #555555;
+$bg-footer: #222222;
+
+$colors: ( white: #ffffff, blue: #3da0ee, dark-blue: #3da0ee, clear-blue: #f1f5fb, light-blue: #f1f2fb, yellow: #ffae00, green: #2ea313, dark-green: #1c8a27, dark: #000000, red: #ff0000, black: #333333, light-gray: #a6abb3, dark-gray: #555555, );
+
+@each $element,
+$value in $colors {
+    .bg--#{$element} {
+        background-color: #{$value};
+    }
+}
+
+//FONTS
+$font-family-base: 'Roboto',
+sans-serif;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+$font-weight-900: 900;
+$font-size-base: 16px;
+$font-size-sm: 12px;
+$line-height-base: 20px;
+$line-height-sm: 16px;
+
+// BORDER
+$btn-radius: 5px;
+$card-radius: 5px;
+$card-radius-big: 15px;

@@ -1,0 +1,434 @@
+main {
+  overflow: hidden;
+
+  &.main-wrapper {
+    min-height: 50vh;
+  }
+
+  &.main--catalogue,
+  &.main--home {
+    margin-bottom: 50px;
+  }
+
+  &.main--cart {
+    margin-top: 100px;
+  }
+}
+
+.container {
+  max-width: 1200px;
+
+  .container {
+    --padding: x 0;
+  }
+
+  &--constraint {
+    max-width: 1000px;
+  }
+
+  @media #{query($min: $md, $max: false)} {
+    width: 95%;
+  }
+}
+.main-title,
+.page-title {
+  font-weight: $font-weight-bold;
+  margin-bottom: 50px;
+}
+
+.privacy-info {
+  height: 40px;
+  font-size: 11.5px;
+  line-height: 14px;
+
+  a {
+    text-decoration: underline dashed;
+
+    &:hover {
+      text-decoration: underline dashed;
+    }
+  }
+
+  &--inline {
+    display: inline-block;
+    width: to-rem(200);
+  }
+
+  &--centered {
+    padding-top: 6px;
+  }
+
+  &--white {
+    color: $white;
+
+    p, a {
+      color: $white;
+    }
+  }
+}
+
+.input-error {
+  border-color: $red !important;
+}
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 0;
+  width: 50px;
+  height: 50px;
+  line-height: 45px;
+  font-size: 25px;
+  border-radius: 50%;
+  background-color: $white;
+  @include border($color: $dark-yellow);
+  text-align: center;
+  cursor: pointer;
+  transition: all .2s ease;
+  opacity: 0;
+  z-index: -999;
+  color: $dark-yellow;
+
+  &:hover {
+    background: $dark-yellow;
+    color: $white;
+  }
+
+  &.active {
+    opacity: 1;
+    bottom: 50px;
+    z-index: 999;
+  }
+}
+
+.loading {
+  position: relative;
+  z-index: 9;
+
+  &:before {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: 150px; left: calc(50% - 25px);
+    @include loader();
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    z-index: 2;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: transparentize($white, .5);
+  }
+
+  &.loader--centered {
+    &:before {
+      top: calc(50% - 25px);
+    }
+  }
+
+  &-bg {
+    &:after {
+      background-color: $white;
+      z-index: 1;
+    }
+
+    &:before {
+      z-index: 2;
+    }
+  }
+}
+
+.img-loader {
+  position: relative;
+  --size: 100%;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: calc(50% - 25px); left: calc(50% - 25px);
+    @include loader();
+  }
+}
+
+.inline-info {
+  display: flex;
+  margin-top: to-rem(50);
+
+  .btn {
+    &:hover::before {
+      @include sprite($download-white);
+    }
+  }
+
+  &__description {
+    flex: auto;
+    font-size: $font-size-sm;
+    line-height: $line-height-sm;
+    padding-top: 4px;
+    max-width: 250px;
+
+    @media(min-width: 576px) {
+      --padding: x 20px;
+    }
+    @media(max-width: 576px) {
+      max-width: 100%;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 576px) {
+    flex-flow: column;
+  }
+}
+
+.youtube {
+  background-color: $dark;
+  position: relative;
+  --size: 100%;
+  max-height: 100%;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: $card-radius;
+
+  img {
+    width: 100%;
+    opacity: 0.9;
+  }
+
+  .play-button {
+    @include border($width: 3px, $color: $white);
+    --size: 65px;
+    background-color: transparentize($black, .25);
+    z-index: 1;
+    border-radius: 50%;
+
+    &:hover {
+      box-shadow: 0 0 15px $white;
+    }
+  }
+
+  .play-button:before {
+    content: "";
+    border-style: solid;
+    border-width: 12px 0 12px 20.0px;
+    border-color: transparent transparent transparent $white;
+    margin-left: 4px;
+  }
+
+  img,
+  iframe,
+  .play-button,
+  .play-button:before {
+    position: absolute;
+  }
+
+  img,
+  .play-button,
+  .play-button:before {
+    top: 50%;
+    left: 50%;
+    transform: translate( -50%, -50%);
+  }
+
+  iframe {
+    --size: 100%;
+    top: 0;
+    left: 0;
+  }
+}
+
+.breadcrumb {
+  margin-bottom: 20px;
+
+  &__list {
+    &-item {
+      @include text($size: 'small');
+      color: $light-gray;
+      display: inline-block;
+      margin-right: 30px;
+      position: relative;
+      line-height: 0;
+
+      &:not(:last-child):after {
+        position: absolute;
+        right: -15px;
+        transform: translateX(50%);
+        content: '>';
+      }
+
+      svg {
+        fill: $light-gray;
+      }
+    }
+  }
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+
+  &--center {
+    justify-content: center;
+  }
+
+  &__nav {
+    flex: 1 1 100%;
+    width: 100%;
+    @include border($position: bottom, $color: #d2d5da);
+  }
+
+  &__list {
+    --margin: -1px -15px;
+
+    &-item {
+      display: inline-block;
+      --padding: x 15px;
+    }
+  }
+
+  &__link {
+    display: block;
+    font-size: 12px;
+    line-height: 42px;
+    height: 40px;
+    font-weight: $font-weight-bold;
+    color: $light-gray;
+    text-transform: uppercase;
+
+    &.active {
+      color: $black;
+      @include border($position: bottom, $width: 2px, $color: $yellow);
+    }
+  }
+
+  &__btn {
+    display: inline-block;
+    font-weight: $font-weight-bold;
+    --margin: x 15px;
+
+    &.active,
+    &.default {
+      color: $yellow;
+      @include border($width: x x 2px x, $style: x x solid x, $color: x x $blue x);
+    }
+  }
+
+  @at-root {
+    .tab {
+      flex: 1 1 100%;
+      order: 1;
+      padding-top: 30px;
+
+      &:not(.default) {
+        display: none;
+      }
+    }
+  }
+}
+
+.svg-border {
+  @include rounded-border($border: 1px, $color: $black);
+}
+
+
+/*the container must be positioned relative:*/
+.custom-select {
+  position: relative;
+  font-family: Arial;
+
+  select {
+    position: absolute;
+    visibility: hidden;
+    z-index: -9999;
+  }
+}
+
+.select-selected {
+  background-color: $clear-blue;
+  color: $gray;
+  font-weight: $font-weight-bold;
+  text-transform: uppercase;
+  font-size: $font-size-sm;
+  overflow: hidden;
+  border-radius: $card-radius;
+}
+
+/*style the arrow inside the select element:*/
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: $gray transparent transparent transparent;
+}
+
+/*point the arrow upwards when the select box is open (active):*/
+.select-selected.select-arrow-active {
+  --border-bottom-radius: 0;
+
+  &:after {
+    border-color: transparent transparent $gray transparent;
+    top: 7px;
+  }
+}
+
+/*style the items (options), including the selected item:*/
+.select-items div,.select-selected {
+  height: 40px;
+  line-height: 40px;
+  white-space: nowrap;
+  --padding: x 15px;
+  cursor: pointer;
+  user-select: none;
+}
+
+/*style items (options):*/
+.select-items {
+  position: absolute;
+  background-color: $white;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  box-shadow: 0 10px 15px lighten($light-gray, 25%);
+  overflow: hidden;
+  --border-bottom-radius: #{$card-radius};
+}
+
+/*hide the items when the select box is closed:*/
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover {
+  background-color: $clear-blue;
+}
+
+.same-as-selected {
+  display: none;
+}
+
+.editor p {
+  text-indent: 2em;
+  margin: 0.6em 0em!important;
+}
+
+.editor ul>li {
+  list-style: inside;
+  padding: 0.3em 1em;
+}
+
+.editor ol>li {
+  list-style: decimal;
+  padding: .3em 1em;
+  margin-left: 1em;
+}
+
+h1.content__title{
+  margin-bottom: 0.2em;
+  margin-top: 0.4em;
+}

@@ -1,0 +1,84 @@
+// 01
+@import '01-base/settings';
+@import '01-base/tools';
+@import '01-base/generic';
+@import '01-base/elements';
+@import '01-base/icons';
+
+// 02
+@import '02-librairies/jquery-ui';
+@import '02-librairies/slick-theme';
+@import '02-librairies/cloudzoom';
+@import '02-librairies/jivoSite';
+@import '02-librairies/ocfilter';
+@import '02-librairies/fancybox';
+
+// 03
+@import '03-layouts/global';
+@import '03-layouts/modal';
+@import '03-layouts/cards';
+@import '03-layouts/sections';
+@import '03-layouts/typography';
+@import '03-layouts/inputs';
+@import '03-layouts/buttons';
+@import '03-layouts/flex';
+@import '03-layouts/texts';
+@import '03-layouts/links';
+@import '03-layouts/lists';
+@import '03-layouts/positions';
+@import '03-layouts/svgSprites';
+@import '03-layouts/hidden';
+
+// 04
+@import '04-modules/banner';
+@import '04-modules/banner-mod';
+@import '04-modules/home-masterhead';
+@import '04-modules/certification';
+@import '04-modules/offers';
+@import '04-modules/documents';
+@import '04-modules/advantages';
+@import '04-modules/hits';
+@import '04-modules/partners';
+@import '04-modules/more-about';
+@import '04-modules/consultation';
+@import '04-modules/home-comments';
+@import '04-modules/examples';
+@import '04-modules/product-of-the-day';
+//Modals
+@import '04-modules/modals/calculator';
+// Common
+@import '04-modules/common/header';
+@import '04-modules/common/footer';
+// Extension/module
+@import '04-modules/extension/newsletters';
+@import '04-modules/extension/additional';
+@import '04-modules/extension/calculator';
+// Home page
+@import '04-modules/home';
+// Catalog page
+@import '04-modules/catalog';
+// Product page
+@import '04-modules/product';
+// Requesites page
+@import '04-modules/requisites';
+// Delivery page
+@import '04-modules/delivery';
+// About company page
+@import '04-modules/about-us';
+// Confirmation page
+@import '04-modules/confirmation';
+// Blog page
+@import '04-modules/blog';
+// Cart page
+@import '04-modules/cart';
+// Vacancy page
+@import '04-modules/vacancies';
+@import '04-modules/vacancy';
+// Projects page
+@import '04-modules/projects';
+// Ukladka page
+@import '04-modules/ukladka';
+// Contact page
+@import '04-modules/contact';
+// Filials page
+@import '04-modules/filials';

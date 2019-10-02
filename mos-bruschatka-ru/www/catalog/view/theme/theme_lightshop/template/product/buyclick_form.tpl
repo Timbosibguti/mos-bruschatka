@@ -1,0 +1,19 @@
+				<?php if(isset($customer_info)){ ?>
+					<input type="text" <?php echo ($buy_click['firstname']['status'] && $customer_info['firstname']) ? '' : 'style="display:none;"'; ?> placeholder="<?php echo $buy_click['firstname']['required'] ? '*' : ''; ?> <?php echo $buy_click['firstname']['name'][$language_id] ? $buy_click['firstname']['name'][$language_id] : $entry_firstname; ?>" value="<?php echo $customer_info['firstname'] ? $customer_info['firstname'] : 'Noname'; ?>" <?php echo isset($customer_info['firstname']) ? 'disabled' : ''; ?>   name="name">
+
+
+					<input type="text" <?php echo ($buy_click['telephone']['status'] && $customer_info['telephone']) ? '' : 'style="display:none;"'; ?> placeholder="<?php echo $buy_click['telephone']['required'] ? '*' : ''; ?> <?php echo $buy_click['telephone']['name'][$language_id] ? $buy_click['telephone']['name'][$language_id] : $entry_telephone ; ?>" value="<?php echo $customer_info['telephone'] ? $customer_info['telephone'] : '9999999'; ?>" <?php echo isset($customer_info['telephone']) ? 'disabled' : ''; ?> name="phone">
+
+					<input type="text" <?php echo $buy_click['email']['status'] ? '' : 'style="display:none;"'; ?> placeholder="<?php echo $buy_click['email']['required'] ? '*' : ''; ?> <?php echo $buy_click['email']['name'][$language_id] ? $buy_click['email']['name'][$language_id] : $entry_email ; ?>" value="<?php echo isset($customer_info['email']) ? $customer_info['email'] : ''; ?>" <?php echo isset($customer_info['email']) ? 'disabled' : ''; ?> name="email">
+
+					<textarea rows="5" <?php echo $buy_click['comment']['status'] ? '' : 'style="display:none;"'; ?> placeholder="<?php echo $buy_click['comment']['required'] ? '*' : ''; ?> <?php echo $buy_click['comment']['name'][$language_id] ? $buy_click['comment']['name'][$language_id] : $entry_comment ; ?>" name="comment"></textarea>
+				<?php }else{ ?>
+					<input type="text" <?php echo $buy_click['firstname']['status'] ? '' : 'style="display:none;"'; ?> placeholder="<?php echo $buy_click['firstname']['required'] ? '*' : ''; ?> <?php echo $buy_click['firstname']['name'][$language_id] ? $buy_click['firstname']['name'][$language_id] : $entry_firstname; ?>" value="<?php echo isset($customer_info['firstname']) ? $customer_info['firstname'] : ''; ?>" <?php echo isset($customer_info['firstname']) ? 'disabled' : ''; ?>   name="name">
+
+
+					<input type="text" <?php echo $buy_click['telephone']['status'] ? '' : 'style="display:none;"'; ?> placeholder="<?php echo $buy_click['telephone']['required'] ? '*' : ''; ?> <?php echo $buy_click['telephone']['name'][$language_id] ? $buy_click['telephone']['name'][$language_id] : $entry_telephone ; ?>" value="<?php echo isset($customer_info['telephone']) ? $customer_info['telephone'] : ''; ?>" <?php echo isset($customer_info['telephone']) ? 'disabled' : ''; ?> name="phone">
+
+					<input type="text" <?php echo $buy_click['email']['status'] ? '' : 'style="display:none;"'; ?> placeholder="<?php echo $buy_click['email']['required'] ? '*' : ''; ?> <?php echo isset($buy_click['email']['name'][$language_id]) && $buy_click['email']['name'][$language_id] ? $buy_click['email']['name'][$language_id] : $entry_email ; ?>" value="<?php echo isset($customer_info['email']) ? $customer_info['email'] : ''; ?>" <?php echo isset($customer_info['email']) ? 'disabled' : ''; ?> name="email">
+
+					<textarea rows="5" <?php echo $buy_click['comment']['status'] ? '' : 'style="display:none;"'; ?> placeholder="<?php echo $buy_click['comment']['required'] ? '*' : ''; ?> <?php echo isset($buy_click['comment']['name'][$language_id]) && $buy_click['comment']['name'][$language_id] ? $buy_click['comment']['name'][$language_id] : $entry_comment ; ?>" name="comment"></textarea>
+				<?php } ?>

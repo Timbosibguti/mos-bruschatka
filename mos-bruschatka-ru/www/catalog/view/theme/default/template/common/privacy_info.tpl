@@ -1,0 +1,1 @@
+<p class="privacy-info__para">Отправляя форму Вы соглашаетесь с <a href="javascript:void(0);" class="js-confidentiality">политикой конфиденциальности</a></p>

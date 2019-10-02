@@ -1,0 +1,66 @@
+{
+  "name": "mos-bruschatka.ru",
+  "version": "1.0.0",
+  "description": "",
+  "main": "postcss.config.js",
+  "dependencies": {
+    "autoprefixer": "^9.5.0",
+    "clean-webpack-plugin": "^1.0.1",
+    "css-mqpacker": "^7.0.0",
+    "file-loader": "^2.0.0",
+    "jquery-lazy": "^1.7.10",
+    "postcss-load-config": "^2.0.0",
+    "precss": "^3.1.2",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0",
+    "webpack-merge": "^3.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "@fancyapps/fancybox": "^3.5.7",
+    "babel-loader": "^8.0.5",
+    "bootstrap": "^4.3.1",
+    "css-loader": "^1.0.1",
+    "current-device": "^0.7.9",
+    "image-sprite-webpack-plugin": "^0.2.4",
+    "inputmask": "^4.0.6",
+    "jquery": "^3.3.1",
+    "jquery-placeholder": "^2.3.1",
+    "mini-css-extract-plugin": "^0.5.0",
+    "node-sass": "^4.11.0",
+    "postcss-csso": "^3.0.0",
+    "postcss-fixes": "^2.0.1",
+    "postcss-import": "^12.0.1",
+    "postcss-loader": "^3.0.0",
+    "postcss-preset-env": "^6.6.0",
+    "postcss-short": "^5.0.0",
+    "sass": "^1.17.3",
+    "sass-loader": "^7.1.0",
+    "slick-carousel": "^1.8.1",
+    "style-loader": "^0.23.1",
+    "webpack-jquery-ui": "^2.0.1",
+    "webpack-spritesmith": "^1.0.0"
+  },
+  "browserslist": [
+    "last 2 version",
+    "> 0.1% in RU",
+    "IE > 10"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config webpack.prod.js",
+    "prod": "webpack --prod --progress",
+    "watch": "webpack --watch --progress --config webpack.dev.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/depmarkt/mos-bruschatka.ru.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/depmarkt/mos-bruschatka.ru/issues"
+  },
+  "homepage": "https://github.com/depmarkt/mos-bruschatka.ru#readme"
+}

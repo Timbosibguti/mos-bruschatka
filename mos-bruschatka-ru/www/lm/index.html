@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Мос-Брусчатка</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="shortcut icon" href="image/favicon.ico" type="image/x-icon">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap&subset=cyrillic" rel="stylesheet">
+	<script src="https://use.fontawesome.com/28ab702e0e.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.js"></script>
+	<script src="https://use.fontawesome.com/37ff9733a9.js"></script>
+	<!-- Yandex.Metrika counter --> 
+	<script type="text/javascript" >
+		var YANDEX_METRIKA_ID = 54209821; 
+		(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)}; m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)}) (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym"); ym(YANDEX_METRIKA_ID, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true }); </script> <noscript><div><img src="https://mc.yandex.ru/watch/54209821" style="position:absolute; left:-9999px;" alt="" /></div>
+	</noscript> 
+	<!-- /Yandex.Metrika counter -->
+</head>
+<body>
+	<div class="container">
+		<div class="main">
+			<div class="header">
+				<div class="header-item__logo">
+					<img src="image/logo.png" alt="">
+					<h2>Производство и продажа <br> тротуарной плитки и брусчатки</h2>
+				</div>
+				<div class="header-item__phone">
+					<a href="tel:+7(499)8774246">+7 499 877 42 46</a>
+					<p>с 9:00 до 20:00</p>
+				</div>
+			</div>
+			<div class="center">
+				<div class="center-left">
+					<h1>Получите прайс <br> на тротуарную плитку</h1>
+					<strong class="strong">со скидкой 30%</strong>
+					<ul class="left-list">
+						<li><i class="fa fa-check" aria-hidden="true"></i>Прямые цены <span class="list-color">от завода-производителя</span></li>
+						<li><i class="fa fa-check" aria-hidden="true"></i>Минимальный заказ <span class="list-color">от 20м<sup>2</sup></span></li>
+						<li><i class="fa fa-check" aria-hidden="true"></i><span class="list-color">Отсрочка</span>платежа</li>
+						<li><i class="fa fa-check" aria-hidden="true"></i><span class="list-color">12 000</span>позиций в наличии</li>
+						<li><i class="fa fa-check" aria-hidden="true"></i><span class="list-color">7 складов</span>отгрузки по МО</li>
+					</ul>
+				</div>
+				<div class="center-right">
+					<form action="https://mos-bruschatka.ru/index.php?route=checkout/success"  method="POST" onsubmit="" >
+						<h3>Получите доступ к онлайн прайс-листу</h3>
+						<div class="form-items">
+							<label class="form-discount-label">
+								-
+								<input type="text" name="discount" class="form-discount js-form-discount" value="30" readonly="">
+								%<sup>*</sup>
+							</label>
+							<p>Заполните форму что бы <br> получить доступ и скидку <br> по номеру телефона</p>
+							<span class="percent">%</span>
+							<input type="email" class="input mail" name="email" required placeholder="Ваш email">
+							<input type="num" class="input phone" name="phone" required placeholder="Ваш телефон">
+							<button class="btn" type="submit">Скачать прайс лист <i class="fa fa-download" aria-hidden="true"></i></button>
+						</div>
+						<p class="privace">Отправляя форму вы соглашаетесь с <br> <a href="https://mos-bruschatka.ru/privacy">политикой конфиденциальности</a></p>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+			<div class="footer-items">
+					<div class="footer-items__text">
+						<p>ООО "Московская Брусчатка" <br> ИНН 7730243425 КПП 773001001</p>
+					</div>
+					<div class="footer-items__text">
+						<p>121170, г. Москва, Кутузовский проспект 36</p>
+						<p class="footer-p">*Сайт носит исключительно информационный характер <br> и не является публичной офертой. <a href="https://mos-bruschatka.ru/privacy">Политика безопасности</a> </p>
+					</div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+	let timer, statusDiscount = false, value = 30;
+
+    $('.js-form-discount').val(value);
+
+        if (statusDiscount === false) {
+            statusDiscount = true;
+
+            timer = setInterval(function() {
+                value = (value - 0.1).toFixed(1);
+
+                if (value < 1.1) {
+                    value = 1.1;
+                    clearInterval(timer);
+                }
+
+                if (value < 10) {
+                    $('.form-discount-label, .form-discount').css({
+                        'color': '#ff0000'
+                    });
+                }
+
+                $('.js-form-discount').val(value);
+            }, 200);
+        }
+
+	$(document).on('submit', 'form', function(e) {
+		//e.preventDefault();
+		ym(YANDEX_METRIKA_ID, 'reachGoal', 'btnDownload'); 
+		window.open('https://mos-bruschatka.ru/index.php?route=custom/download&type=pricelist', '_blank');
+      	
+        let $self = $(this);
+        let formTitle = 'LM-Скачать прайс-лист';
+        let data = $self.serialize() + '&title=' + encodeURIComponent(formTitle);
+
+        $.ajax({
+            url: '../mail/callback.php',
+            type: 'POST',
+            data: data,
+            dataType: 'JSON',
+
+        }).done(function(response) {
+            if(response['error']) {
+                for(let i in response['error']) {
+                    $self.find(`input[name="${i}"]`).effect('shake', shakeUiConfig);
+                }
+            } else {
+                roistatStatus(response);
+            }
+
+        }).fail(function(xhr, ajaxOptions, thrownError) {
+            alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+        });
+
+
+    });
+
+    (function(w, d, s, h, id) {
+	    w.roistatProjectId = id; w.roistatHost = h;
+	    var p = d.location.protocol == "https:" ? "https://" : "http://";
+	    var u = /^.*roistat_visit=[^;]+(.*)?$/.test(d.cookie) ? "/dist/module.js" : "/api/site/1.0/"+id+"/init";
+	    var js = d.createElement(s); js.charset="UTF-8"; js.async = 1; js.src = p+h+u; var js2 = d.getElementsByTagName(s)[0]; js2.parentNode.insertBefore(js, js2);
+	})(window, document, 'script', 'cloud.roistat.com', '2eddbbf2f2e2a8cd7b11edbc44e38d1c');
+
+	$('.phone').mask('+7 (000) 000 00 00', {onComplete: function(){
+		clearInterval(timer);
+	}});
+
+	</script>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120435361-3"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-120435361-3');
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification>
+	<id>Metrics</id>
+	<version>1.0.0</version>
+	<vqmver>2.5.X</vqmver>
+	<author>yannickngassa@departamentmarketing</author>
+	
+	<file path="catalog/controller/" name="common/header.php">
+
+		<operation error="skip" info="Add metrics">
+             <search position="after"><![CDATA[public function index() {]]></search>
+             <add><![CDATA[$data['ym_code'] = $this->config->get('yandex_metrika_code');]]></add>
+		</operation>
+
+	</file>		
+
+</modification>

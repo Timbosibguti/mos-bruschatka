@@ -1,0 +1,35 @@
+.documents {
+	&__h2 {
+		margin-bottom: 40px;
+	}
+
+	&__cards {
+		display: -webkit-box;
+	    display: -ms-flexbox;
+	    display: flex;
+	    -ms-flex-flow: wrap;
+	    flex-flow: wrap;
+	    -webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	    justify-content: left;
+	    -webkit-box-align: stretch;
+	    -ms-flex-align: stretch;
+	    align-items: stretch;
+	    margin: 0 -15px;
+	}
+
+	&__card {
+		display: inline-block;
+		--padding: x 15px;
+		--margin: 2% x;
+		width: 25%;
+
+		img {
+			width: 100%;
+		}
+
+		@media(max-width: 576px){
+		min-width: 50%;
+		}
+	}
+}

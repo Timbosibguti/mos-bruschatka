@@ -1,0 +1,55 @@
+%position-center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+@media(min-width: 768px) {
+	%position-center-md-up {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+}
+
+.float-left {
+	float: left;
+}
+
+.float-right {
+	float: right;
+}
+
+.clearfix-left {
+	clear: left;
+}
+
+.clearfix-right {
+	clear: right;
+}
+
+.clearfix-both {
+	clear: both;
+}
+
+.position-static-top {
+	position: static;
+	top: 60px;
+}
+
+.position-relative {
+	position: relative;
+}
+
+.position-fixed-top {
+	position: fixed;
+	top: 0;
+}
+
+.is-hidden-md {
+	@media #{query($min: false, $max: $md)} {
+		display: none;
+	}
+}

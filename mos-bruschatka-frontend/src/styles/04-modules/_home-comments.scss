@@ -1,0 +1,136 @@
+.comments-home {
+	&__h2 {
+		margin-bottom: 10px;
+
+		@media (max-width: 992px) {
+			font-size: 26px;
+			text-align: center;
+		}
+	}
+
+	&__h3 {
+		margin-bottom: 40px;
+	}
+
+	&__btn {
+		font-size: 14px;
+		background-color: darken($clear-blue, 5%);
+		color: $gray;
+	}
+
+	&__slider {
+		margin: 0;
+	}
+
+	&__row {
+		@include flexbox(wrap, null, stretch);
+	}
+
+	@media(max-width: 576px){
+	&__col:first-child{
+	text-align: center;
+	}
+	}
+
+
+	&__col {
+		position: relative;
+		width: 100%;
+
+		@media(min-width: 1050px) {
+			width: 50%;
+			&:first-of-type {
+				padding: 25px 50px 25px 0;
+			}
+		}
+
+		@media(min-width: 992px) {
+			&:first-of-type {
+				width: 33%;
+			}
+			&:last-of-type {
+				width: 67%;
+			}
+		}
+	}
+
+	&__item {
+		background-color: $white;
+		position: relative;
+		border-radius: $card-radius-big;
+		overflow: hidden;
+
+		&--classic {
+			display: flex !important;
+			align-items: stretch;
+
+			@media(max-width: 576px){
+			flex-direction: column-reverse;
+			}
+		}
+
+		&-content {
+			height: 470px;
+			width: 50%;
+			padding: 30px;
+			flex: 1 1 50%;
+			display: flex;
+			flex-flow: column;
+            justify-content: center;
+            
+			@media (max-width: 650px) {
+				width: 100%;
+				height: 100%;
+			}
+		}
+
+		.youtube {
+			height: 470px;
+			width: 100%;
+		}
+	
+		&-title {
+			margin-bottom: 20px;
+		}
+	
+		&-body {
+			margin-bottom: 30px;
+		}
+	
+		&-profil {
+			display: inline-block !important;
+			width: 50px !important;
+			vertical-align: middle;
+			margin-right: 15px;
+		}
+	
+		&-location {
+			color: $light-gray;
+			font-weight: $font-weight-bold;
+			padding-bottom: 5px;
+		}
+	
+		&-footer {
+			clear: both;
+			&__float-left {
+				float: left;
+			}
+			&__float-right {
+				float: right;
+			}
+			@media (max-width: 567px) {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+		}
+	
+		&-showcase {
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			flex: 1 1 50%;
+		}
+
+	}
+}

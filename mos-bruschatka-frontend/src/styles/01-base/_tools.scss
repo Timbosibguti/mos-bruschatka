@@ -1,0 +1,189 @@
+// MIXINS
+@mixin flexbox($flex-flow, $justify-content, $align-items) {
+    display: flex;
+    @if $flex-flow {flex-flow: $flex-flow;}
+    @if $justify-content {justify-content: $justify-content;}
+    @if $align-items {align-items: $align-items;}
+}
+
+@mixin border($position: null, $width: 1px, $style: solid, $color: $black) {
+    @if $position {
+        border-#{$position}-width: #{$width};
+        border-#{$position}-style: #{$style};
+        border-#{$position}-color: #{$color};
+    } @else {
+        --border-width: #{$width};
+        --border-style: #{$style};
+        --border-color: #{$color};
+    }
+    
+}
+
+@mixin rounded-border($border: 1px, $color: $gray) {
+    border-width: $border;
+    border-style: solid;
+    border-color: $color;
+    border-radius: 50%;
+    @include flexbox(null, center, center);
+
+    svg {
+        fill: $color;
+    }
+}
+
+@mixin button($size: x 40px, $lh: 44px, $textAlign: center, $fs: $font-size-sm, $radius: $btn-radius, $bgColor: transparent, $color: $black, $padding: x) {
+    position: relative;
+    text-align: $textAlign;
+    --size: #{$size};
+    --padding: #{$padding};
+    line-height: $lh;
+    font-size: $fs;
+    border-radius: $radius;
+    font-weight: $font-weight-bold;
+    background-color: $bgColor;
+    color: $color;
+    text-transform: uppercase;
+    transition: all .3s ease;
+}
+
+@mixin text($size: null, $fs: $font-size-base, $lh: $line-height-base, $weight: null) {
+    @if $size == 'normal' {
+        font-size: $font-size-base;
+        line-height: $line-height-base;
+    } @else if($size == 'small') {
+        font-size: $font-size-sm;
+        line-height: $line-height-sm;
+    } @else if($size == 'h2') {
+        font-size: 40px;
+        line-height: 44px;
+
+        @if not $weight {
+            font-weight: $font-weight-normal;
+        }
+    } @else if($size == 'h3') {
+        font-size: 24px;
+	    line-height: 26px;
+    } @else {
+        font-size: $fs;
+        line-height: $lh;
+    }
+
+    @if $weight {
+        font-weight: $weight;
+    }
+}
+
+@mixin loader($size: 50px, $border-width: 5px, $border-type: solid, $border-color: $clear-blue, $color-top: $yellow, $timing: .4s, $easing: linear, $loop: infinite) {
+    border: $border-width $border-type $border-color;
+    border-radius: 50%;
+    border-top: $border-width $border-type $color-top;
+    --size: #{$size};
+    animation: spin $timing $easing $loop;
+}
+
+@mixin shadow() {
+    box-shadow: 0 10px 10px 1px lighten(#dce4f0, 5%);
+}
+
+@mixin svgfix($v-align: -3px, $pos: right, $dx: 8px) {
+    vertical-align: $v-align;
+    @if $pos {
+        margin-#{$pos}: #{$dx};
+    }
+}
+
+
+
+// FUNCTIONS
+// Screens sizes
+@function query($min, $max) {
+    @if $min and not $max {
+        @return '(min-width: #{$min})';
+    } @else if $max and not $min {
+        @return '(max-width: #{$max})';
+    } @else {
+        @return '(min-width: #{$min}) and (max-width: #{$max})';
+    }
+}
+
+@function makeCol($col, $fill, $gutter: false) {
+    $colWidth: 100% / $col;
+    $width: $colWidth * $fill;
+    @return $width;
+}
+
+@function to-rem($pixels) {
+    @return #{$pixels / 16}rem;
+}
+
+
+// ANIMATIONS
+/* Loader yellow part */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Masterhead animation */
+@keyframes upAndDown {
+    0% {opacity: .7; bottom: 50px;}
+    50% {opacity: 1; bottom: 70px;}
+    100% {opacity: .7; bottom: 50px;}
+}
+  
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: $yellow; }
+}
+
+
+$sizes: (1, 2), (1, 3), (2, 3), (1, 4), (3, 4), (2, 7), (5, 7), (2, 9), (6, 7), (7, 9), (7, 10);
+@each $size-fill, $full-size in $sizes {
+    .size#{$size-fill}of#{$full-size} {
+        display: inline-block;
+        width: makeCol($full-size, $size-fill);
+    }
+}
+
+$svg-border-sizes: 40, 50, 70;
+@each $size in $svg-border-sizes {
+    .svg-border--#{$size} {
+        --size: #{$size}px;
+    }
+}
+
+$mbs: 0, 5, 10, 15, 20, 25, 30, 35, 40, 50, 60, 100;
+@each $space in $mbs {
+    .mb-#{$space} {
+        margin-bottom: #{$space}px !important;
+    }
+
+    .mt-#{$space} {
+        margin-top: #{$space}px !important;
+    }
+}
+
+.ml-auto {
+    margin-left: auto;
+}
+
+.m-auto {
+    --margin: x auto;
+}
+
+.whitespace-nowrap {
+    white-space: nowrap;
+}
+
+@media(max-width: 576px){
+    .col-3, .col-6{
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+$sm: 576px;
+$md: 767px;
+$lg: 992px;
+$xl: 1200px;

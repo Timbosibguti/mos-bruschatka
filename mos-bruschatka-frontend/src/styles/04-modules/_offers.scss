@@ -1,0 +1,29 @@
+.offers {
+    &__item {
+        @media #{query($min: false, $max: $md)} {
+            &:not(:nth-child(n + 5)) {
+                margin-bottom: 1.5rem;
+            }
+        }
+
+        @media #{query($min: $md, $max: $lg)} {
+            &:not(:nth-child(n + 4)) {
+                margin-bottom: 1.5rem;
+            }
+        }
+
+        &-icon {
+            margin-bottom: 1rem;
+
+            @media #{query($min: false, $max: $lg)} {
+                &:not(:nth-child(n + 4)) {
+                    margin-bottom: .5rem;
+                }
+            }
+
+            svg {
+                --size: 1.75rem;
+            }
+        }
+    }
+}

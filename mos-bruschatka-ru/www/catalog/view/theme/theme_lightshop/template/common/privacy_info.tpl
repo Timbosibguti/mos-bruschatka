@@ -1,0 +1,1 @@
+<p class="privacy-info__para">Отправляя форму вы соглашаетесь с <a href="<?php echo $link; ?>" data-fancybox data-filter=".editor" data-type="ajax">политикой конфиденциальности</a></p>

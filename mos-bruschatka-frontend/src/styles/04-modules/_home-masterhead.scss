@@ -1,0 +1,42 @@
+.masterhead {
+	background-color: $bg-footer;
+	position: relative;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+
+	&__overlay {
+		position: relative;
+		min-height: 60vh;
+		@include flexbox(null, center, center);
+		color: $white;
+
+		@media #{query($min: false, $max: $md)} {
+			--padding: 70px x;
+		}
+
+		@media #{query($min: $md, $max: false)} {
+			--padding: 150px x;
+		}
+	}
+
+	&__title {
+		color: $white;
+		margin-bottom: 30px;
+	}
+
+	&__sub-title {
+		color: $white;
+		margin-bottom: 15px;
+	}
+
+	&__list {
+		padding-bottom: 1rem;
+		
+		&-item {
+			display: block;
+			margin-bottom: 1rem;
+			color: $white;
+		}
+	}
+}

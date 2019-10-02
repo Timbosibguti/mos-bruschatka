@@ -1,0 +1,129 @@
+
+.ocfilter {
+	$parent: &;
+	box-shadow: 0 3px 18px transparentize($dark, .9);
+	padding: 20px;
+	margin-bottom: 10px;
+
+	&-option {
+		&:not(:last-child) {
+			@include border($position: bottom, $color: #d2d5da);
+			margin-bottom: 15px;
+			padding-bottom: 15px;
+		}
+
+		&-values {
+			&.slide-prices {
+				padding: 10px 12px;
+			}
+
+			&.is-hidden {
+				display: none;
+			}
+		}
+	}
+
+	&-option-name {
+		position: relative;
+		font-weight: $font-weight-bold;
+		width: 100%;
+		color: $dark;
+		font-size: $font-size-base;
+		line-height: $line-height-base;
+		text-align: left;
+		margin-bottom: 5px;
+	}
+
+	.ocf-prices-range {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		font-size: $font-size-sm;
+		color: $light-gray;
+		--margin: 10px x 15px x;
+
+		hr {
+			display: block;
+			height: 0;
+			@include border($position: top, $color: $light-gray);
+			width: 15px;
+			--margin: x 10px;
+		}
+	}
+
+	.ocf-min-price,
+	.ocf-max-price {
+		@include border($color: #d2d5da);
+		line-height: 30px;
+		height: 30px;
+		--padding: x 5px;
+		border-radius: $card-radius;
+		display: flex;
+		flex: 1 1 50px;
+		
+		&-value {
+			display: inline-block;
+			font-size: $font-size-base;
+			color: $gray;
+			width: 100%;
+			--padding: x 5px;
+		}
+	}
+
+	.ocf-value-link {
+		position: relative;
+		padding-left: 25px;
+		min-height: 25px;
+		@include flexbox(null, space-between, center);
+
+		&:before {
+			content: '';
+			@include flexbox(null, center, center);
+			position: absolute;
+			top: 2px; left: 0;
+			--size: 16px;
+			@include border();
+			border-radius: 2px;
+		}
+
+		&:hover {
+			color: $yellow;
+
+			&:before {
+				border-color: $yellow;
+			}
+		}
+
+		&.ocf-selected {
+			color: $yellow;
+
+			&:before {
+				content: '\2714';
+				border-color: $yellow;
+			}
+		}
+
+		&.ocf-disabled {    
+			color: #dddddd !important;
+			
+			&:after, &:before {
+				border-color: #dddddd !important;
+			}
+		}
+	}
+
+	.ocf-counter {
+		display: none;
+		margin-left: 5px;
+		width: 20px;
+		text-align: center;
+		@include border($color: $clear-blue);
+		border-radius: $card-radius;
+	}
+
+	.ocf-img {
+		display: inline-block;
+		text-align: left;
+		width: 20px;
+	}
+}

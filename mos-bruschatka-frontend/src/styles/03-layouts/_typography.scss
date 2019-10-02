@@ -1,0 +1,44 @@
+h1, .h1 {
+	color: $black;
+	@include text($size: h2, $weight: $font-weight-bold);
+	--margin: 0 x; --padding: 0 x;
+
+	@media #{query($min: false, $max: $md)} {
+		@include text($fs: 30px, $lh: 34px);
+	}
+}
+
+h2, .h2 {
+	@include text($size: h2);
+	color: $black;
+	--margin: 0 x; --padding: 0 x;
+
+	@media #{query($min: false, $max: $md)} {
+		@include text($fs: 30px, $lh: 34px);
+	}
+}
+
+h3, .h3 {
+	color: $gray;
+	@include text($size: h3);
+	font-weight: $font-weight-normal;
+	--margin: 0 x; --padding: 0 x;
+}
+
+h4, .h4 {
+	font-size: 20px;
+	line-height: 24px;
+	--margin: 0 x; --padding: 0 x;
+}
+
+h5, .h5 {
+	font-size: 16px;
+	line-height: 22px;
+	--margin: 0 x; --padding: 0 x;
+}
+
+h6, .h6 {
+	font-size: 12px;
+	line-height: 14px;
+	--margin: 0 x; --padding: 0 x;
+}

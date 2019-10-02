@@ -1,0 +1,33 @@
+.card {
+    margin-bottom: 30px;
+    border-radius: $card-radius;
+    overflow: hidden;
+
+    &-link {
+        border: 1px solid $clear-blue;
+
+        &:hover {
+            box-shadow: 0 5px 5px darken($clear-blue, 10%);
+        }
+    }
+
+    &--blue {
+        background-color: $blue;
+        padding: 20px;
+    }
+
+    &-outline--gray {
+        border: 1px solid $clear-blue;
+        padding: 20px;
+    }
+
+    &--clear-gray,
+    &--highlight {
+        background-color: $clear-blue;
+        padding: 20px;
+    }
+}
+
+.section.hits.wholesale .product-card__btns{
+    display: none;
+}

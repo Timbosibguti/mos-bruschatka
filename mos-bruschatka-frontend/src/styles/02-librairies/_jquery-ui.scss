@@ -1,0 +1,36 @@
+.ui {
+    &-corner-all {
+        background-color: $clear-blue;
+    }
+    &-corner-header {
+        height: 4px;
+    }
+    &-slider {
+        &-range {
+            background: $yellow;
+            cursor: pointer;
+        }
+
+        &-horizontal {
+            height: 3px;
+            background-color: $clear-blue;
+
+            .ui-state-default {
+                background: $yellow;
+                border-radius: 50%;
+                cursor: pointer !important;
+                --size: 12px;
+                top: 50%;
+                transform: translateY(-50%);
+
+                &:first-child {
+                    margin-right: 0;
+                }
+
+                &:last-child {
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+}
